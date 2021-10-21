@@ -2,7 +2,6 @@ import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Environment, OrbitControls } from '@react-three/drei'
 import Box from './Box'
-import Button from './Button'
 
 const MyCanvas = () => {
     const [haveLight, setHaveLight] = useState(true)
@@ -11,7 +10,6 @@ const MyCanvas = () => {
     }
     return (
         <>
-            <Button color={'green'} text={haveLight ? 'light on' : 'light off'} onClick={changeLight} />
             <Canvas>
                 <Suspense>
                     {haveLight ? (
