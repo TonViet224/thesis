@@ -12,4 +12,8 @@
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
-  }
+}
+.btn-holder{
+    margin-left: 10px;
+    display: flex;
+}

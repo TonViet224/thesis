@@ -1,0 +1,87 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+body, html{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-image: linear-gradient(to bottom right, #56809E , #84CEEB, #C1C8E4,#8860D0);
+}
+.grid-container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.3fr 2.4fr 0.3fr;
+    grid-template-rows: 0.2fr auto 0.2fr;
+    grid-template-areas: 
+        "hd hd hd "
+        "left main right"
+        "ft ft ft";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto); 
+}
+.main-area{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "lt rt";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto); 
+}
+.left-area{
+    grid-area: lt;
+}
+.right-area{
+    grid-area: rt;
+    background-color: white;
+}
+.form-container{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.form-container label{
+    margin: 5px 0px 5px 0px;
+}
+input[type=text], input[type=password] {
+    padding: 10px 15px;
+    margin: 5px 0 5px 0;
+    box-sizing: border-box;  
+    border: 1px solid #8364bd;
+    border-radius: 5px;
+}
+button{
+    background-image: linear-gradient(to right, #5AB9EA, #C1C8E4);
+    border: none;
+    padding: 10px 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    height: 50px;
+    border-radius: 5px;
+}
+button:hover{
+    background-image: linear-gradient(to right, #84CEEB, #8860D0);
+}
+.social-media{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+.social-button{
+    width: 70px;
+    margin: 5px 5px 5px 5px;
+}
+.social-button:hover{
+    opacity: 0.5;
+}
+.canvas-3d{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+#c{
+    align-self: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 10px; 
+}
