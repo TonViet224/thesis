@@ -19,6 +19,7 @@ const KeyLight = ({ brightness, color }) => {
         />
     );
 }
+
 const FillLight = ({ brightness, color }) => {
     return (
         <rectAreaLight
@@ -47,6 +48,7 @@ const RimLight = ({ brightness, color }) => {
         />
     );
 }
+
 const MyCanvas2 = () => {
     const [light, setLight] = useState(true)
     const [preset, setPreset] = useState('sunset')
@@ -70,7 +72,7 @@ const MyCanvas2 = () => {
                     <KeyLight brightness={50.6} color={"#ffc9f9"} />
                     <FillLight brightness={20.6} color={"#bdefff"} />
                     <RimLight brightness={540} color={"#fff"} />
-                    <Model onAni={ani} />
+                    <Model onAni={ani} url3d={'./models/leather_shoes/scene.gltf'}/>
                     <OrbitControls />
                     {light ? (<Environment preset={preset} background />) : (<></>)}
                 </Suspense>

@@ -2,8 +2,9 @@ import React, { Suspense, useRef } from 'react'
 import { useLoader, useFrame } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { Html } from '@react-three/drei'
-const Model = ({ onAni }) => {
-    const gltf = useLoader(GLTFLoader, './models/leather_shoes/scene.gltf')
+
+const Model = ({ onAni, url3d }) => {
+    const gltf = useLoader(GLTFLoader, url3d)
     const ref = useRef()
     useFrame(() => {
         if (onAni) {

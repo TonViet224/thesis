@@ -4,6 +4,7 @@ import LoginPage from './Component/LoginPage';
 import SignUpPage from './Component/SignUpPage';
 import MyCanvas from './Component/MyCanvas2';
 import Panoramic from './Component/Panoramic';
+import Showroom from './Component/Showroom';
 function App() {
   return (
     <Router>
@@ -13,6 +14,7 @@ function App() {
         <Route path="/signup"><SignUpPage/></Route>
         <Route path="/mycanvas"><MyCanvas/></Route>
         <Route path="/panolen"><Panoramic/></Route>
+        <Route path="/showroom"><Showroom/></Route>
       </Switch>
       
     </Router>

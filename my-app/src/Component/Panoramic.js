@@ -1,17 +1,7 @@
 import Iframe from 'react-iframe'
 const Panoramic = () => {
     return (
-        <iframe
-            width="100%"
-            height="640"
-            style={{ width: '100%', height: '900px', border: 'none', maxWidth: '100%' }}
-            frameborder="0"
-            allowfullscreen
-            allow="xr-spatial-tracking; gyroscope; accelerometer"
-            scrolling="no"
-            src="https://kuula.co/share/collection/7kRmD?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
-
-        </iframe>
+        <iframe width="1000px" height="1000px" allowfullscreen frameborder="0" src="https://orbix360.com/t/IEhiElpd3uX6ASwW02SKch4bhu23/5992146897207296/demo?embed=yes"></iframe>
     )
 }
 export default Panoramic
