@@ -1,11 +1,5 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-body, html{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-image: linear-gradient(to bottom right, #56809E , #84CEEB, #C1C8E4,#8860D0);
-}
-
 .gridContainer{
     display: grid;
     height: 100vh;
@@ -48,7 +42,7 @@ body, html{
     margin: 5px 0px 5px 0px;
 }
 
-input[type=text], input[type=password] {
+.formContainer input[type=text],.formContainer input[type=password] {
     padding: 10px 15px;
     margin: 5px 0 5px 0;
     box-sizing: border-box;  
@@ -56,7 +50,7 @@ input[type=text], input[type=password] {
     border-radius: 5px;
 }
 
-button{
+.formContainer button{
     background-image: linear-gradient(to right, #5AB9EA, #C1C8E4);
     border: none;
     padding: 10px 5px;
@@ -67,7 +61,7 @@ button{
     border-radius: 5px;
 }
 
-button:hover{
+.formContainer button:hover{
     background-image: linear-gradient(to right, #84CEEB, #8860D0);
 }
 

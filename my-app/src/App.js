@@ -10,14 +10,14 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/"><MainPage/></Route>
-        <Route path="/login"><LoginPage/></Route>
-        <Route path="/signup"><SignUpPage/></Route>
-        <Route path="/mycanvas"><MyCanvas/></Route>
-        <Route path="/panolen"><Panoramic/></Route>
-        <Route path="/showroom"><Showroom/></Route>
+        <Route exact path="/"><MainPage /></Route>
+        <Route path="/login"><LoginPage /></Route>
+        <Route path="/signup"><SignUpPage /></Route>
+        <Route path="/mycanvas"><MyCanvas /></Route>
+        <Route path="/panolen"><Panoramic /></Route>
+        <Route path="/showroom"><Showroom /></Route>
       </Switch>
-      
+
     </Router>
   )
 }

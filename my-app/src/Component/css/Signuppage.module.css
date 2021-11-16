@@ -1,8 +1,3 @@
-body, html{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-image: linear-gradient(to bottom right, #56809E , #84CEEB, #C1C8E4,#8860D0);
-}
 
 .gridContainer{
     display: grid;
@@ -48,7 +43,7 @@ body, html{
 #genderOption{
     display: flex;
 }
-input[type=text], input[type=password] {
+.formContainer input[type=text],.formContainer input[type=password] {
     align-self: center;
     width: 80%;
     padding: 10px 15px;
@@ -57,11 +52,11 @@ input[type=text], input[type=password] {
     border: 1px solid #8364bd;
     border-radius: 5px;
 }
-input[type=radio]{
+.formContainer input[type=radio]{
     justify-self: center;
     align-self: center;
 }
-button{
+.formContainer button{
     background-image: linear-gradient(to right, #5AB9EA, #C1C8E4);
     border: none;
     padding: 10px 5px;
@@ -71,6 +66,6 @@ button{
     font-weight: bold;
     color: white;
 }
-button:hover{
+.formContainer button:hover{
     background-image: linear-gradient(to right, #84CEEB, #8860D0);
 }
