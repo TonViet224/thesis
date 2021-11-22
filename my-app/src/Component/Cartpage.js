@@ -18,9 +18,9 @@ const Cartpage = () => {
                             <p>Price:</p>
                         </div>
                         <div className={`${styles.cardFunc}`}>
-                            <button type="button" onClick="" style={{ marginRight: 0, height: 30 }}><i class=" fas fa-plus"></i></button>
-                            <input style={{ width: 30, height: 20, padding: 3 }} type="number" id="" value="amount" />
-                            <button type="button" onClick="" style={{ marginLeft: 0, height: 30 }}><i class="fas fa-minus"></i></button>
+                            <button type="button" onClick="" ><i class=" fas fa-plus"></i></button>
+                            <input type="number" id="" value="amount" />
+                            <button type="button" onClick="" ><i class="fas fa-minus"></i></button>
                             <input onClick="" type="button" id={styles['removeBtn']} value="Remove this item" />
                         </div>
                     </div>

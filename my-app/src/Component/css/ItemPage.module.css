@@ -155,7 +155,13 @@ input::-webkit-inner-spin-button {
     margin: 10px 0 10px 0;
     width: 200px;
     display: flex;
+    align-items: center;
+}
+.quantityFunc button{
+    height: 30px;
+    margin: 0 5px 0 5px;
 }
 .quantityFunc input[type=number] {
     -moz-appearance: textfield;
+    height: 30px;
 }

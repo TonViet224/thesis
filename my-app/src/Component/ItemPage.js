@@ -31,21 +31,21 @@ const ItemPage = () => {
                     </div>
                 </div>
                 <div className={`${styles.rightArea}`}>
-                <form action="/#" method="POST">
-                    <h2 id="item-name"></h2>
-                    <h3 id="rating">Rating</h3>
-                    <h1 id="item-prize">Prize:</h1>
-                    <label>Quantity</label>
-                    <div id='quantityFunc' className={`${styles.quantityFunc}`}>
-                        <button type="button" onClick="" style={{height: 20}}><i class=" fas fa-plus"></i></button>
-                        <input style={{width: 30, padding: 3}} type="number" id="quantity" name="quantity" value="1"/>
-                        <button type="button" onClick=""><i class="fas fa-minus"></i></button>
-                    </div>
-                    <input type="submit" id={styles['addBtn']} value="Add to cart"/>
-                </form>
-                <label style={{fontSize: 20, fontWeight: 600}}>Item detail</label>
-                <p>Content</p>
-            </div>
+                    <form action="/#" method="POST">
+                        <h2 id="item-name"></h2>
+                        <h3 id="rating">Rating</h3>
+                        <h1 id="item-prize">Prize:</h1>
+                        <label>Quantity</label>
+                        <div id='quantityFunc' className={`${styles.quantityFunc}`}>
+                            <button type="button" onClick=""><i class=" fas fa-plus"></i></button>
+                            <input style={{ width: 30, padding: 3 }} type="number" id="quantity" name="quantity" value="1" />
+                            <button type="button" onClick=""><i class="fas fa-minus"></i></button>
+                        </div>
+                        <input type="submit" id={styles['addBtn']} value="Add to cart" />
+                    </form>
+                    <label style={{ fontSize: 20, fontWeight: 600 }}>Item detail</label>
+                    <p>Content</p>
+                </div>
             </div>
             <Footer />
         </div>

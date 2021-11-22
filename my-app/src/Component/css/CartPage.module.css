@@ -106,9 +106,17 @@
 .cardFunc{
     margin-left: auto;
     margin-right: 20px;
+    display: flex;
+    align-items: center;
 }
-.cardFunc input{
-    margin-top: 10px;
+.cardFunc button {
+    margin: 0 2px 0 2px;
+    height: 30px;
+}
+.cardFunc input[type=number]{
+    width: 30px;
+    height: 30px;
+    padding: 3px;
 }
 #quantitySelector{
     width: 20px;
@@ -120,7 +128,7 @@
     height: 40px;
     border: none;
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 15px;
     border-radius: 5px;
 }
 #removeBtn:hover{
