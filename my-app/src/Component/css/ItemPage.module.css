@@ -1,0 +1,161 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+.gridContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 126px auto 126px;
+    grid-template-areas: 
+        "hd hd hd"
+        "side main main"
+        "ft ft ft";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto);
+}
+.headerArea{
+    grid-area: hd;
+}
+.sideBarArea{
+    grid-area: side;
+}
+.mainArea{
+    grid-area: main;
+}
+.footerArea{
+    grid-area: ft;
+    display: flex;
+}
+.mainBody{
+    
+    display: grid;
+    grid-template-columns: 0.66fr 0.34fr;
+    grid-template-areas: 
+        "left right";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto);
+}
+.leftArea{
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 10px 10px;
+}
+.rightArea{
+    background-color: rgb(243, 242, 242);
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 15px;
+    margin-top: 8px;
+}
+#viewportFuncs{
+    display: flex;
+}
+#viewportFuncs button{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#itemName{
+    margin-bottom: 5px;
+}
+#rating{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#itemPrize{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#viewportFuncs{
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn3D{
+    width: 100px;
+    padding: 5px 4px 5px 4px;   
+    background-color: #5AB9EA;
+    color: #5680E9;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;    
+}
+.btn3D:hover{
+    background-color: #74d0fd;
+    color: #314a8a;    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+#addBtn{
+    height: 50px;
+    width: 160px;
+    padding: 8px 12px 8px 12px;
+    background-color: #C1C8E4;
+    border: 3px solid #8860D0;
+    border-radius: 25px;
+    margin: 5px 5px 10px 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8860D0;
+    align-self: center;
+    justify-self: center;
+    margin-left: 120px;
+}
+#addBtn:hover{
+    color:#C1C8E4;
+    background-color:  #8860D0 ;
+}
+.reviewBox{
+    display: flex;
+    flex-direction: column;
+}
+.reviewContainer{
+    display: flex;
+}
+.iconHolder{
+    margin: 5px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #5680E9;
+    color: white;
+    text-align: center;
+    line-height: 68px;
+    vertical-align: middle;
+}
+#reviewText{
+    width: 500px;
+    height: 80px;
+    margin-left: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    resize: none;
+}
+#reviewBtn{
+    border-radius: 20px;
+    border: none;
+    height: 50px;
+    width: 120px;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #5680E9;
+}
+#reviewBtn:hover{
+    background-color: #74d0fd;
+}
+.quantityFunc{
+    margin: 10px 0 10px 0;
+    width: 200px;
+    display: flex;
+}
+.quantityFunc input[type=number] {
+    -moz-appearance: textfield;
+}

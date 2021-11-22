@@ -2,6 +2,7 @@
 
 .gridContainer{
     display: grid;
+    height: 100vh;
     grid-template-columns: 0.5fr 2fr 0.5fr;
     grid-template-rows: 126px auto 126px;
     grid-template-areas: 
@@ -67,7 +68,7 @@
     border: 2px solid #e0d8f0;
 }
 .itemCard img{
-    height: 230px;
+    height: 200px;
     width: 180px;
     align-self: center;
 }

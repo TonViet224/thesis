@@ -1,0 +1,135 @@
+.gridContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 126px auto 126px;
+    grid-template-areas: 
+        "hd hd hd"
+        "side main right"
+        "ft ft ft";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto);
+}
+
+/*main has 2 grid: ml and mr*/
+.mainBody{
+    background-color: rgb(236, 234, 234);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    grid-template-areas: 
+        "ml mr";
+    grid-gap: 0.5rem;
+}
+.mlArea{
+    grid-area: ml;
+}
+.mrArea{
+    grid-area: mr;
+}
+
+.headerArea{
+    grid-area: hd;
+}
+.mainArea{
+    grid-area: main;
+}
+.footerArea{
+    grid-area: ft;
+    display: flex;
+}
+.sideBarArea{
+    grid-area: side;
+}
+
+#profileBox{
+    background-color: white;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+#profileBox img{
+    height: 150px;
+    width: 150px;
+    align-self: center;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+#profileBox p{
+    align-self: center;
+}
+#infoBox{
+    background-color: white;
+    height: 600px;
+    padding: 15px;
+}
+
+table tbody tr th input[type=text]{
+    float: left;
+    margin-left: 50px;
+    width: 300px;
+}
+.uinfo input[type=text], input[type=password] {
+    padding: 10px 15px;
+    margin: 5px 0 5px 0;
+    box-sizing: border-box;  
+    border: 1px solid #8364bd;
+    border-radius: 5px;
+}
+
+.uinfo input[type=number]{
+    margin: 10px 0 10px 0;
+    float: left;
+}
+#profilepicBtn{
+    border: none;
+    border-radius: 15px;
+    background-color: #5AB9EA;
+    padding: 15px 10px 15px 10px;
+    text-align: center;
+    width: 150px;
+    align-self: center;
+    color: white;
+    font-weight: 600;
+}
+#profilepicBtn:hover{
+    background-color: #5680E9;
+    color: #84CEEB;
+}
+.gBtn{
+    border: none;
+    border-radius: 15px;
+    background-color: #5AB9EA;
+    padding: 15px 10px 15px 10px;
+    text-align: center;
+    width: 150px;
+    align-self: center;
+    color: white;
+    font-weight: 600;
+}
+.gBtn:hover{
+    background-color: #5680E9;
+    color: #84CEEB;
+}
+.infoHolder{
+    display: flex;
+    margin: 15px 0 0 0;
+}
+.infoHolder label {
+    display: flex;
+    font-weight: bold;
+    width: 150px;
+    align-items: center;
+}
+.infoHolder input[type=text], input[type=number]{
+    padding: 10px 15px;
+    margin: 5px 0 5px 0;
+    box-sizing: border-box;  
+    border: 1px solid #8364bd;
+    border-radius: 5px;
+    width: 300px;
+}
+.infoHolder input[type=radio]{
+    margin: 10px 10px 10px 10px;
+}
