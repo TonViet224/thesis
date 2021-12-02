@@ -25,7 +25,6 @@ function App() {
         <Route path="/panolen"><Panoramic /></Route>
         <Route path="/showroom"><Showroom /></Route>
       </Switch>
-
     </Router>
   )
 }

@@ -6,22 +6,22 @@ import uniStyles from './css/Universallayout.module.css'
 
 const MainPage = () => {
     return (
-        <div className={styles.gridContainer}>
+        <div className={styles.gridContainer} style={{ background: `white`, height: `100vh` }}>
             <Header />
             <Sidebar />
-            <div className={`${styles.mainBody} ${styles.mainArea}`}>
+            <div className={`${styles.mainBody} ${styles.mainArea}`} >
                 <div className={`${styles.slideShow}`}>
                 </div>
                 <h2>Sale items</h2>
                 <div className={`${styles.disItems}`}>
                     <div onClick="" className={`${styles.itemCard}`}>
-                        <img src="/#" alt=""/>
+                        <img src="/#" alt="" />
                         <p>Product Name</p>
                         <p>Price</p>
                         <p>Quantity</p>
                     </div>
                     <div onClick="" className={`${styles.itemCard}`}>
-                        <img src="/#" alt=""/>
+                        <img src="/#" alt="" />
                         <p>Product Name</p>
                         <p>Price</p>
                         <p>Quantity</p>
@@ -30,13 +30,13 @@ const MainPage = () => {
                 <h2>Popular items</h2>
                 <div className={`${styles.disItems}`}>
                     <div onclick="" className={`${styles.itemCard}`}>
-                        <img src="<%= products_sale[i].img2Durl%>" alt=""/>
+                        <img src="<%= products_sale[i].img2Durl%>" alt="" />
                         <p>Product Name</p>
                         <p>Price</p>
                         <p>Quantity</p>
                     </div>
                     <div onclick="" className={`${styles.itemCard}`}>
-                        <img src="<%= products_sale[i].img2Durl%>" alt=""/>
+                        <img src="<%= products_sale[i].img2Durl%>" alt="" />
                         <p>Product Name</p>
                         <p>Price</p>
                         <p>Quantity</p>
