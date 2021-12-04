@@ -1,0 +1,71 @@
+
+.gridContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr auto auto;
+    grid-template-areas: 
+        "hd hd hd hd"
+        "left main main right"
+        "ft ft ft ft";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto);
+    
+}
+.headerArea{
+    grid-area: hd;
+    height: 50px;
+}
+.mainArea{
+    grid-area: main;
+}
+.footerArea{
+    grid-area: ft;
+    height: 50px;
+}
+.signupContainter{
+    display: flex;
+    padding: 20px;
+    background-color:white;
+    width: 400px;
+    align-self: center;
+    justify-self: center;
+
+}
+.formContainer{
+    display: flex;
+    flex-direction: column;
+}
+.formContainer label{
+    font-size: 15px;
+    margin: 5px;
+}
+#genderOption{
+    display: flex;
+}
+.formContainer input[type=text],.formContainer input[type=password] {
+    align-self: center;
+    width: 80%;
+    padding: 10px 15px;
+    margin: 5px 3px;
+    box-sizing: border-box;  
+    border: 1px solid #8364bd;
+    border-radius: 5px;
+}
+.formContainer input[type=radio]{
+    justify-self: center;
+    align-self: center;
+}
+.formContainer button{
+    background-image: linear-gradient(to right, #5AB9EA, #C1C8E4);
+    border: none;
+    padding: 10px 5px;
+    width: 80%;
+    align-self: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+.formContainer button:hover{
+    background-image: linear-gradient(to right, #84CEEB, #8860D0);
+}

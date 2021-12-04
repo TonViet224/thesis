@@ -1,9 +1,9 @@
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import { useLoader, useFrame } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { Html } from '@react-three/drei'
+import Annotation from './Annotation'
 
-const Model = ({ onAni, url3d }) => {
+const Model = ({ onAni, url3d, scale }) => {
     const gltf = useLoader(GLTFLoader, url3d)
     const ref = useRef()
     useFrame(() => {
@@ -14,14 +14,11 @@ const Model = ({ onAni, url3d }) => {
     return (
         <>
             <mesh ref={ref}>
-                <primitive position={[0, 0, 0]} object={gltf.scene} scale={0.4} />
+                <primitive position={[0, 0, 0]} object={gltf.scene} scale={scale} />
             </mesh>
-            <Html distanceFactor={10}>
-                <div class="content">
-                    hello <br />
-                    world
-                </div>
-            </Html>
+            <Annotation pos={[0, -1, 0]} content={'hello world 1'} anoNum={'1'} />
+            <Annotation pos={[-1, 7, -1]} content={'hello world 2'} anoNum={'2'} />
+            <Annotation pos={[4, 4, 4]} content={'hello world 3'} anoNum={'3'} />
         </>
     )
 }

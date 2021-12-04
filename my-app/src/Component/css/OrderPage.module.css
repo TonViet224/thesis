@@ -1,0 +1,101 @@
+.gridContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 126px auto 126px;
+    grid-template-areas: 
+        "hd hd hd"
+        "side main main"
+        "ft ft ft";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto);
+}
+.headerArea{
+    grid-area: hd;
+}
+.sideBarArea{
+    grid-area: side;
+}
+.mainArea{
+    grid-area: main;
+}
+.footerArea{
+    grid-area: ft;
+    display: flex;
+}
+.mainBody{
+    
+    display: grid;
+    grid-template-columns: 0.66fr 0.34fr;
+    grid-template-areas: 
+        "left right";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto);
+}
+.leftArea{
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+}
+.rightArea{
+    background-color: rgb(243, 242, 242);
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 15px;
+    margin-top: 8px;
+}
+.itemCard{
+    background-color: white;
+    padding: 5px;
+    width: 98%;
+    height: 110px;
+    margin: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    border: solid 1px;
+}
+.itemDetail{
+    margin-left: 15px;
+}
+.itemDetail p{
+    margin: 5px 0 5px 0;
+}
+.itemCard img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+#CusInfo{
+    padding: 10px;
+    border: solid 2px;
+    border-radius: 15px;
+}
+#CusInfo p{
+    margin: 5px 0 5px 0;
+}
+
+#PurchaseBtn{
+    background-color: #5680E9;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    align-self: center;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+#PurchaseBtn:hover{
+    background-color: #375192;
+}
+table{
+    margin-top: 10px;
+}
+table th{
+    float: left;
+}

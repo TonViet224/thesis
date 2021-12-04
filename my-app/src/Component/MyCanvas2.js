@@ -1,10 +1,15 @@
 import { Environment, OrbitControls } from '@react-three/drei'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import React, { Suspense, useRef, useState } from 'react'
+import * as THREE from 'three'
 import Model from './Model'
 import Button from './Button'
 
-// Lights
+/**
+ * keylight
+ * @param {*} param0 
+ * @returns 
+ */
 const KeyLight = ({ brightness, color }) => {
     return (
         <rectAreaLight
@@ -20,6 +25,11 @@ const KeyLight = ({ brightness, color }) => {
     );
 }
 
+/**
+ * Fill Light
+ * @param {*} param0 
+ * @returns 
+ */
 const FillLight = ({ brightness, color }) => {
     return (
         <rectAreaLight
@@ -35,6 +45,11 @@ const FillLight = ({ brightness, color }) => {
     );
 }
 
+/**
+ * Rim Light
+ * @param {*} param0 
+ * @returns 
+ */
 const RimLight = ({ brightness, color }) => {
     return (
         <rectAreaLight
@@ -49,11 +64,14 @@ const RimLight = ({ brightness, color }) => {
     );
 }
 
+/**
+ * 
+ * @returns the canvas display 3d scene
+ */
 const MyCanvas2 = () => {
     const [light, setLight] = useState(true)
     const [preset, setPreset] = useState('sunset')
     const [ani, setAni] = useState(true)
-
     const lightChange = () => {
         setLight(!light)
     }
@@ -67,12 +85,13 @@ const MyCanvas2 = () => {
     }
     return (
         <div className="canvas3d">
-            <Canvas>
+            <Canvas camera={{ position: [10, 10, 10] }}>
                 <Suspense fallback={null}>
+                    <primitive object={new THREE.AxesHelper(10)} />
                     <KeyLight brightness={50.6} color={"#ffc9f9"} />
                     <FillLight brightness={20.6} color={"#bdefff"} />
                     <RimLight brightness={540} color={"#fff"} />
-                    <Model onAni={ani} url3d={'./models/leather_shoes/scene.gltf'}/>
+                    <Model onAni={false} url3d={'./models/leather_shoes/scene.gltf'} scale={0.05} />
                     <OrbitControls />
                     {light ? (<Environment preset={preset} background />) : (<></>)}
                 </Suspense>

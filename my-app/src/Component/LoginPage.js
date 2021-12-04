@@ -1,15 +1,14 @@
-import React from 'react'
-import style from './css/Loginpage.module.css'
+import styles from './css/Loginpage.module.css'
 
 const LoginPage = () => {
     return (
-        <div >
-            <div >
-                <div className="form-container right-area">
+        <div className={styles.gridContainer} style={{ backgroundImage: `linear-gradient(to bottom right, #56809E , #84CEEB, #C1C8E4,#8860D0)` }}>
+            <div className={styles.mainArea}>
+                <div className={`${styles.formContainer} ${styles.rightArea}`}>
                     <h1 style={{ alignSelf: "center" }}>Login</h1>
-                    <div className="social-media">
-                        <button className="social-button fa fa-facebook-f" style={{ background: "darkblue" }}></button>
-                        <button className="social-button fa fa-google" style={{ background: "darkred" }}></button>
+                    <div className={styles.socialMedia}>
+                        <button className={`${styles.socialButton} fa fa-facebook-f`} style={{ background: "darkblue" }}></button>
+                        <button className={`${styles.socialButton} fa fa-google`} style={{ background: "darkred" }}></button>
                     </div>
                     <p id='mess' style={{ color: "red" }}></p>
                     <label for="fname">User Name</label>
@@ -21,6 +20,9 @@ const LoginPage = () => {
                     <p style={{ alignSelf: "center", fontSize: '30px', margin: '0' }}>or</p>
                     <button type="button" style={{ margin: '12px 0 12px 0' }} id="signup-button"
                         onclick="/">Sign Up</button>
+                </div>
+                <div className={styles.canvas3d}>
+                    <div id={styles['c']}></div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,146 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(180, 110, 245);
+}
+.sideBar a{
+    padding-left: 5px;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+}
+.sideBar a:hover{
+    background-color: darkmagenta;
+    color: deepskyblue;
+}
+
+/*Main body is devided into 2 area*/
+.mainBody{
+    background-color: rgb(231, 229, 229);
+    padding: var(--main-padding);
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: "left right";
+}
+.leftArea{
+    grid-area: left;
+}
+.rightArea{
+    grid-area: right;   
+    display: flex;
+    flex-direction: column;
+}
+.rightArea div{
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 20px;
+    padding: 15px;
+}
+.rightArea input[type = button]{
+    background-color: #5680E9;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    align-self: center;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.rightArea input[type = button]:hover{
+    background-color: #375192;
+}
+
+/*Grid layout*/
+.gridContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.6fr 1fr 1fr 1fr;
+    grid-template-rows: 126px auto auto 126px;
+    grid-template-areas: 
+        "hd hd hd hd"
+        "side main main main"
+        "side main main main"
+        "ft ft ft ft";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto);
+}
+
+.headerArea{
+    grid-area: hd;
+}
+.sideBarArea{
+    grid-area: side;
+}
+.mainArea{
+    grid-area: main;
+}
+.footerArea{
+    grid-area: ft;
+    display: flex;
+}
+/*Main body item card*/
+.itemCard{
+    background-color: white;
+    padding: 5px;
+    width: 98%;
+    height: 130px;
+    margin: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.itemCard img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+.itemDetail{
+    margin-left: 15px;
+}
+.cardFunc{
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+.cardFunc button {
+    margin: 0 2px 0 2px;
+    height: 30px;
+}
+.cardFunc input[type=number]{
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+}
+#quantitySelector{
+    width: 20px;
+    height: 25px;
+}
+#removeBtn{
+    color: white;
+    background-color: #5AB9EA;
+    height: 40px;
+    border: none;
+    font-weight: bold;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+#removeBtn:hover{
+    background-color: #5680E9;
+}
+#changeBtn{
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(90, 90, 250);
+    padding: 10px;
+}
+#changeBtn:hover{
+    background-color: #8860D0;
+}

@@ -1,0 +1,85 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+body, html{
+    background-image: white;
+}
+.gridContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 126px auto 126px;
+    grid-template-areas: 
+        "hd hd hd"
+        "side main right"
+        "ft ft ft";
+    grid-gap: 0.2rem;
+    grid-auto-rows: minmax(500px, auto);
+}
+.headerArea{
+    grid-area: hd;
+}
+.sideBarArea{
+    grid-area: side;
+}
+.mainArea{
+    grid-area: main;
+}
+.footerArea{
+    grid-area: ft;
+    display: flex;
+}
+.mainBody{
+    background-color: rgb(227, 250, 253);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+/*Main page slider*/
+.slideShow{
+    margin-top: 20px;
+    background-color: white;
+    width: 80%;
+    height: 200px;
+    align-self: center;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.slideShow img{
+    width: 80%;
+    height: 200px;
+}
+.disItems{
+    background-color: white;
+    width: 100%;
+    height: auto;
+    align-self: center;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.itemCard{
+    background-color: white;
+    height: 300px;
+    width: 200px;
+    justify-self: center;
+    align-self: center;
+    margin: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #e0d8f0;
+}
+.itemCard img{
+    height: 200px;
+    width: 180px;
+    align-self: center;
+}
+.itemCard p{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    
+}
+.itemCard:hover{
+    border: 2px solid #8860D0;
+    box-shadow: 0 4px 8px 0 #5680E9;
+}
