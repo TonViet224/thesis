@@ -5,7 +5,11 @@ import * as THREE from 'three'
 import Model from './Model'
 import Button from './Button'
 
-// Lights
+/**
+ * keylight
+ * @param {*} param0 
+ * @returns 
+ */
 const KeyLight = ({ brightness, color }) => {
     return (
         <rectAreaLight
@@ -21,6 +25,11 @@ const KeyLight = ({ brightness, color }) => {
     );
 }
 
+/**
+ * Fill Light
+ * @param {*} param0 
+ * @returns 
+ */
 const FillLight = ({ brightness, color }) => {
     return (
         <rectAreaLight
@@ -36,6 +45,11 @@ const FillLight = ({ brightness, color }) => {
     );
 }
 
+/**
+ * Rim Light
+ * @param {*} param0 
+ * @returns 
+ */
 const RimLight = ({ brightness, color }) => {
     return (
         <rectAreaLight
@@ -50,6 +64,10 @@ const RimLight = ({ brightness, color }) => {
     );
 }
 
+/**
+ * 
+ * @returns the canvas display 3d scene
+ */
 const MyCanvas2 = () => {
     const [light, setLight] = useState(true)
     const [preset, setPreset] = useState('sunset')
