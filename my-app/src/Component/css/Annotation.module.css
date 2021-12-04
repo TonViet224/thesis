@@ -1,0 +1,21 @@
+.content {
+    padding-top: 10px;
+    transform: translate3d(50%, 0, 0);
+    text-align: left;
+    background: #202035;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+.annotationMarker{
+    width: 20px;
+    height: 20px;
+    background-color: #202035;
+    color: white;
+    border-radius: 50%;
+    border-color: white;
+    border-width: 3px;
+    padding: 5px 5px;
+    text-align: center;
+    border-style: solid;
+}
