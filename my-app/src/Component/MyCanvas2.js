@@ -91,8 +91,8 @@ const MyCanvas2 = () => {
                     <KeyLight brightness={50.6} color={"#ffc9f9"} />
                     <FillLight brightness={20.6} color={"#bdefff"} />
                     <RimLight brightness={540} color={"#fff"} />
-                    <Model onAni={false} url3d={'./models/leather_shoes/scene.gltf'} scale={0.05} />
-                    <OrbitControls />
+                    <Model url3d={'./models/leather_shoes/scene.gltf'} scale={0.05} />
+                    <OrbitControls autoRotate={ani} autoRotateSpeed={3.0} />
                     {light ? (<Environment preset={preset} background />) : (<></>)}
                 </Suspense>
             </Canvas>

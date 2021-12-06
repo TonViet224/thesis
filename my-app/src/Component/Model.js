@@ -2,7 +2,12 @@ import React, { Suspense, useRef, useState } from 'react'
 import { useLoader, useFrame } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import Annotation from './Annotation'
-
+import * as THREE from 'three'
+/**
+ * Model
+ * @param {*} param0 
+ * @returns 
+ */
 const Model = ({ onAni, url3d, scale }) => {
     const gltf = useLoader(GLTFLoader, url3d)
     const ref = useRef()
@@ -11,6 +16,7 @@ const Model = ({ onAni, url3d, scale }) => {
             ref.current.rotation.y += 0.01
         }
     })
+
     return (
         <>
             <mesh ref={ref}>
