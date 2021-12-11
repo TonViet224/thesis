@@ -1,6 +1,6 @@
 import { Suspense, useState } from "react"
 import { Canvas, useLoader } from "@react-three/fiber"
-import { OrbitControls, Preload, Html } from "@react-three/drei"
+import { OrbitControls, Html, useTexture, Preload } from "@react-three/drei"
 import * as THREE from 'three'
 
 /**
@@ -12,7 +12,7 @@ const store = [
         position_0: [15, -2, 1],
         position_1: [30, -3, -40],
         position_2: [-5, -3, -40],
-        url: './img360/panorama_1.png',
+        url: './img360/panorama_1-min.png',
         link: [
             { loc: 1, name: 'corner rt' },
             { loc: 2, name: 'corner lt' },
@@ -24,7 +24,7 @@ const store = [
         position_0: [-15, -2, 1],
         position_1: [0, -5, -40],
         position_2: [-45, -5, -45],
-        url: './img360/panorama_2.png',
+        url: './img360/panorama_2-min.png',
         link: [
             { loc: 0, name: 'corner rb' },
             { loc: 2, name: 'corner lt' },
@@ -36,7 +36,7 @@ const store = [
         position_0: [-45, -4, 45],
         position_1: [0, -4, 45],
         position_2: [-35, -1, 0],
-        url: './img360/panorama_3.png',
+        url: './img360/panorama_3-min.png',
         link: [
             { loc: 0, name: 'corner rb' },
             { loc: 1, name: 'corner rt' },
@@ -48,7 +48,7 @@ const store = [
         position_0: [0, -4, 35],
         position_1: [30, -4, 35],
         position_2: [15, -1, 1],
-        url: './img360/panorama_4.png',
+        url: './img360/panorama_4-min.png',
         link: [
             { loc: 0, name: 'corner rb' },
             { loc: 1, name: 'corner rt' },
@@ -63,12 +63,12 @@ const store = [
  * @returns 
  */
 const Dome = (props) => {
-
+    const textures = useTexture(store.map((entry) => entry.url))
     return (
         <group>
             <mesh>
-                <sphereBufferGeometry args={[500, 60, 40]} />
-                <meshBasicMaterial map={props.texture} side={THREE.BackSide} />
+                <sphereGeometry args={[500, 60, 40]} />
+                <meshBasicMaterial map={textures[props.texture]} side={THREE.BackSide} />
             </mesh>
             <mesh position={props.position_0}>
                 <sphereGeometry args={[0.75, 12, 12]} />
@@ -96,16 +96,22 @@ const Dome = (props) => {
 }
 
 /**
- * this allows the user to move inthe showroom
+ * this allows the user to move in the showroom
  */
+
 function Portals() {
+
+    /*const textures = useTexture(store.map((entry) => entry.url))*/
     const [which, set] = useState(0)
-    const { ...props } = store[which]
     const goto_0 = () => set(props.link[0].loc)
     const goto_1 = () => set(props.link[1].loc)
     const goto_2 = () => set(props.link[2].loc)
-    const maps = useLoader(THREE.TextureLoader, store.map((entry) => entry.url)) // prettier-ignore
-    return <Dome g0={goto_0} g1={goto_1} g2={goto_2} {...props} texture={maps[which]} />
+    const { ...props } = store[which]
+    return (
+        <>
+            <Dome g0={goto_0} g1={goto_1} g2={goto_2} {...props} texture={which} />
+        </>
+    )
 }
 
 /**
@@ -118,9 +124,9 @@ const Panoramic = () => {
             <Canvas frameloop="demand" camera={{ position: [0, 0, 0.1] }}>
                 <OrbitControls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.2} autoRotate={false} rotateSpeed={-0.5} />
                 <Suspense fallback={null}>
-                    <Preload all />
-                    <primitive object={new THREE.AxesHelper(10)} />
+                    {/*<primitive object={new THREE.AxesHelper(10)} />*/}
                     <Portals />
+                    <Preload all />
                 </Suspense>
             </Canvas>
         </div>

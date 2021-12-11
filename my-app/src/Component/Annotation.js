@@ -40,9 +40,7 @@ const Annotation = ({ pos, content, anoNum }) => {
         const checkClickedOutSide = e => {
             if (isClicked && ref.current && !ref.current.contains(e.target)) {
                 setIsClicked(false)
-                /*cameraTarget.set(0, 15, 30)*/
             }
-
         }
         document.addEventListener("mousedown", checkClickedOutSide)
         return () => {
@@ -63,7 +61,7 @@ const Annotation = ({ pos, content, anoNum }) => {
             center
             sprite
             occlude
-            onOcclude={setVisible}>
+            onOcclude={setVisible} >
             <div ref={ref} className={style.annotationMarker} onClick={() => AnnoZoom(pos)}>
                 {anoNum}
             </div>

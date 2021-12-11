@@ -1,9 +1,10 @@
-import { Environment, OrbitControls } from '@react-three/drei'
+import { Environment, OrbitControls, useHelper } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import React, { Suspense, useRef, useState } from 'react'
 import * as THREE from 'three'
 import Model from './Model'
 import Button from './Button'
+import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper.js'
 
 /**
  * keylight
@@ -11,16 +12,19 @@ import Button from './Button'
  * @returns 
  */
 const KeyLight = ({ brightness, color }) => {
+    const keylight = useRef()
+    useHelper(keylight, RectAreaLightHelper, 'cyan')
     return (
         <rectAreaLight
             width={3}
             height={3}
             color={color}
             intensity={brightness}
-            position={[-20, 0, 50]}
+            position={[-5, 0, 5]}
             lookAt={[0, 0, 0]}
             penumbra={1}
             castShadow
+            ref={keylight}
         />
     );
 }
@@ -31,16 +35,19 @@ const KeyLight = ({ brightness, color }) => {
  * @returns 
  */
 const FillLight = ({ brightness, color }) => {
+    const filllight = useRef()
+    useHelper(filllight, RectAreaLightHelper, 'red')
     return (
         <rectAreaLight
             width={3}
             height={3}
             intensity={brightness}
             color={color}
-            position={[20, 10, 40]}
+            position={[2, 1, 4]}
             lookAt={[0, 0, 0]}
             penumbra={2}
             castShadow
+            ref={filllight}
         />
     );
 }
@@ -51,15 +58,18 @@ const FillLight = ({ brightness, color }) => {
  * @returns 
  */
 const RimLight = ({ brightness, color }) => {
+    const rimlight = useRef()
+    useHelper(rimlight, RectAreaLightHelper, 'pink')
     return (
         <rectAreaLight
             width={2}
             height={2}
             intensity={brightness}
             color={color}
-            position={[10, 40, -20]}
+            position={[1, 4, -2]}
             rotation={[0, 180, 0]}
             castShadow
+            ref={rimlight}
         />
     );
 }
@@ -83,16 +93,17 @@ const MyCanvas2 = () => {
     const toggleAni = () => {
         setAni(!ani)
     }
+
     return (
         <div className="canvas3d">
             <Canvas camera={{ position: [10, 10, 10] }}>
                 <Suspense fallback={null}>
                     <primitive object={new THREE.AxesHelper(10)} />
-                    <KeyLight brightness={50.6} color={"#ffc9f9"} />
-                    <FillLight brightness={20.6} color={"#bdefff"} />
-                    <RimLight brightness={540} color={"#fff"} />
-                    <Model url3d={'./models/leather_shoes/scene.gltf'} scale={0.05} />
-                    <OrbitControls autoRotate={ani} autoRotateSpeed={3.0} />
+                    <KeyLight brightness={500} color={"#ffc9f9"} />
+                    <FillLight brightness={500} color={"#bdefff"} />
+                    <RimLight brightness={500} color={"#fff"} />
+                    <Model url3d={'./models/leather_shoes/scene.gltf'} scale={0.05} onClick={() => setAni(false)} />
+                    <OrbitControls autoRotate={ani} autoRotateSpeed={2.0} />
                     {light ? (<Environment preset={preset} background />) : (<></>)}
                 </Suspense>
             </Canvas>

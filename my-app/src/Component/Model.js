@@ -22,7 +22,7 @@ const Model = ({ onAni, url3d, scale }) => {
             <mesh ref={ref}>
                 <primitive position={[0, 0, 0]} object={gltf.scene} scale={scale} />
             </mesh>
-            <Annotation pos={[0, -1, 0]} content={'hello world 1'} anoNum={'1'} />
+            <Annotation pos={[0, -0.5, -0.5]} content={'hello world 1'} anoNum={'1'} />
             <Annotation pos={[-1, 7, -1]} content={'hello world 2'} anoNum={'2'} />
             <Annotation pos={[4, 4, 4]} content={'hello world 3'} anoNum={'3'} />
         </>
