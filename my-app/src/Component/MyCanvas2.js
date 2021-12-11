@@ -1,5 +1,5 @@
 import { Environment, OrbitControls, useHelper } from '@react-three/drei'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import React, { Suspense, useRef, useState } from 'react'
 import * as THREE from 'three'
 import Model from './Model'
@@ -20,7 +20,7 @@ const KeyLight = ({ brightness, color }) => {
             height={3}
             color={color}
             intensity={brightness}
-            position={[-5, 0, 5]}
+            position={[0, 0, 20]}
             lookAt={[0, 0, 0]}
             penumbra={1}
             castShadow
@@ -43,8 +43,8 @@ const FillLight = ({ brightness, color }) => {
             height={3}
             intensity={brightness}
             color={color}
-            position={[2, 1, 4]}
-            lookAt={[0, 0, 0]}
+            position={[2, 1, -15]}
+            rotation={[0, 3.1, 0]}
             penumbra={2}
             castShadow
             ref={filllight}
@@ -62,12 +62,12 @@ const RimLight = ({ brightness, color }) => {
     useHelper(rimlight, RectAreaLightHelper, 'pink')
     return (
         <rectAreaLight
-            width={2}
-            height={2}
+            width={30}
+            height={30}
             intensity={brightness}
             color={color}
-            position={[1, 4, -2]}
-            rotation={[0, 180, 0]}
+            position={[25, 0, 0]}
+            rotation={[0, 1.5, 0]}
             castShadow
             ref={rimlight}
         />
@@ -99,12 +99,12 @@ const MyCanvas2 = () => {
             <Canvas camera={{ position: [10, 10, 10] }}>
                 <Suspense fallback={null}>
                     <primitive object={new THREE.AxesHelper(10)} />
-                    <KeyLight brightness={500} color={"#ffc9f9"} />
-                    <FillLight brightness={500} color={"#bdefff"} />
-                    <RimLight brightness={500} color={"#fff"} />
+                    {light ? (<KeyLight brightness={500} color={"#ffc9f9"} />) : (<></>)}
+                    {light ? (<FillLight brightness={150} color={"#bdefff"} />) : (<></>)}
+                    {light ? (<RimLight brightness={5} color={"#fff"} />) : (<></>)}
                     <Model url3d={'./models/leather_shoes/scene.gltf'} scale={0.05} onClick={() => setAni(false)} />
                     <OrbitControls autoRotate={ani} autoRotateSpeed={2.0} />
-                    {light ? (<Environment preset={preset} background />) : (<></>)}
+                    <Environment preset={preset} background />
                 </Suspense>
             </Canvas>
             <div className="btn-holder">
